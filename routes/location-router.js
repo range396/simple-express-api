@@ -9,7 +9,7 @@ import { isHeadersValid } from '../service/user-service.js';
 
 export const router = Router();
 
-//TODO: uncompleted swagger configuration
+//TODO: uncompleted swagger content for endpoints
 /**
  * @swagger
  * tags:
@@ -27,7 +27,7 @@ export const router = Router();
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/swagger.json'
+ *                 $ref: 'http://localhost:1234/json-doc#/Location'
  */
 
 // Middleware

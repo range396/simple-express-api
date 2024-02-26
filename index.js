@@ -3,6 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJsdoc from 'swagger-jsdoc';
+import fs from 'fs';
 // Routing imports
 import { router as locationRouter } from './routes/location-router.js';
 import { router as userRouter } from './routes/user-router.js';
@@ -49,7 +50,7 @@ let swOptions = {
                 "A simple CRUD API application made with Express and documented with Swagger",
             license: {
                 name: "MIT",
-                url: "", //https://spdx.org/licenses/MIT.html
+                url: "https://spdx.org/licenses/MIT.html"
             },
             contact: {
                 name: "",
@@ -57,11 +58,12 @@ let swOptions = {
                 email: "",
             },
         },
-        // servers: [
-        //     {
-        //         url: "http://localhost:1234",
-        //     },
-        // ],
+        servers: [
+            {
+                url: 'http://localhost:1234',
+                description: 'Development server',
+            },
+        ],
     },
     apis: ["./routes/*.js"],
 };
@@ -73,7 +75,10 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {
         validatorUrl: null
     }
 })); //swaggerUi.setup(swaggerDocument, swOptions)
-
+app.use('/json-doc', (req, res) => {
+    let file = fs.readFileSync('./swagger.json', 'utf8');
+    res.send(file);
+});
 export default app;
 
 let port = process.env.APPPORT || 1234;
