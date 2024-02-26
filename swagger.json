@@ -1,1 +1,55 @@
-{}
+{
+  "Location": {
+    "type": "object",
+    "properties": {
+      "location_id": {
+        "type": "number"
+      },
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "rating": {
+        "type": "number",
+        "multipleOf": 0.1
+      },
+      "review_count": {
+        "type": "number"
+      },
+      "latitude": {
+        "type": "string"
+      },
+      "longitude": {
+        "type": "string"
+      },
+      "crated_at": {
+        "type": "string",
+        "format": "date-time "
+      },
+      "updated_at": {
+        "type": "string",
+        "format": "date-time "
+      }
+    }
+  },
+  "User": {
+    "type": "object",
+    "properties": {
+      "user_id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "token": {
+        "type": "string"
+      }
+    }
+  }
+
+}

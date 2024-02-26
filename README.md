@@ -19,6 +19,10 @@ npm install --legacy-peer-deps
 or
 npm install --force
 ```
+###Run app
+```
+npm run watch-dev
+```
 
 ## Location Data
 - location_id
