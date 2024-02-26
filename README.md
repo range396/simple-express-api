@@ -19,7 +19,7 @@ npm install --legacy-peer-deps
 or
 npm install --force
 ```
-###Run app
+### Run app
 ```
 npm run watch-dev
 ```
